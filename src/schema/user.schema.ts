@@ -1,10 +1,7 @@
 import {dataSource} from "../connectors/db-init.js";
-import {SchemaDataTypes} from "knex-db-connector";
+import {SchemaDataTypes} from 'knex-db-connector';
 
-export const UserSchema = await dataSource.createSchema('User', {
-    id: {
-        type: SchemaDataTypes.increments
-    },
+export const UserRepo= await dataSource.createSchema('User', {
     name: {
         type: SchemaDataTypes.string
     },
