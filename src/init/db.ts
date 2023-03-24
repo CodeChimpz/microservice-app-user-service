@@ -1,7 +1,7 @@
 import {DataSource} from "knex-db-connector";
 import {config} from "dotenv";
 import {WinstonLoggerService} from "mein-winston-logger";
-import {logger} from "./logger-init.js";
+import {logger} from "./logger.js";
 
 config()
 const {
@@ -22,4 +22,4 @@ export const dataSource = new DataSource({
         password: MYSQL_PASSWORD,
         database: MYSQL_DBNAME
     }
-}, logger)
+})

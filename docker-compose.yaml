@@ -16,6 +16,6 @@ services:
   db:
     restart: always
     build:
-      dockerfile: mysql.Dockerfile
+      dockerfile: Dockerfile.mysql
 
 
