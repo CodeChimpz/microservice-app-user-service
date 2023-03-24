@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  server:
+    command: ["npm","run","dev"]
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ./logs/:/usr/app/logs
+      - ./src:/usr/app/src
+    environment:
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  db:
+    restart: always
+    build:
+      dockerfile: Dockerfile.mysql
+
+
